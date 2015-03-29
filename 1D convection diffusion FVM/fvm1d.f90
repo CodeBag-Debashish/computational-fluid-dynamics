@@ -67,11 +67,11 @@
 		scaler_node(i)%aw = scaler_node(i)%dw + scaler_node(i)%fw/2.0d0  !max(scaler_node(i)%fw,0.00) 
 		scaler_node(i)%ap = scaler_node(i)%ae + scaler_node(i)%aw + (scaler_node(i)%fe - scaler_node(i)%fw) 
 	end do
-   end subroutine central_sch_coeff
+   	end subroutine central_sch_coeff
 !-----------------------------------------------------------------------------------------
-    subroutine first_order_upwind_sch_coeff
-    use grid_data
-    implicit none
+    	subroutine first_order_upwind_sch_coeff
+    	use grid_data
+    	implicit none
     
 	integer::i,j
          
@@ -80,7 +80,7 @@
 		scaler_node(i)%aw = scaler_node(i)%dw + max(scaler_node(i)%fw,0.0d0) 
 		scaler_node(i)%ap = scaler_node(i)%ae + scaler_node(i)%aw + (scaler_node(i)%fe - scaler_node(i)%fw) 
 	end do
-    end subroutine first_order_upwind_sch_coeff
+    	end subroutine first_order_upwind_sch_coeff
 !-----------------------------------------------------------------------------------------------------
 	subroutine hybrid_differencing_scheme
 	use grid_data
